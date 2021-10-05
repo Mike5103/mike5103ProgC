@@ -1,11 +1,19 @@
 void setup(){
-  size(400,600);
+  size(800,200);
 }
 
+int r = 1;
+
 void draw(){
-  circle(50,550,100);
-  line(13,583,50,530);
-  line(85,586,50,0);
+  background(255);
   
+  pushMatrix();
+  translate(50+r,125);
+  r++;
+  rotate(frameCount/10.0);
+  circle(0,0,50);
+  line(-25,0,25,0);
+  line(0,-25,0,25);
   
+  popMatrix();
 }
