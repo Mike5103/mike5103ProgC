@@ -1,11 +1,11 @@
-class Trekant {
+class Rektangler {
   // klassens attributter/ tilstand
   float x, y;
-  int h, g; // Attributer for trekantens højde og grundlinje
+  float h,w;
   color farve; // Farve attribut
 
   //konstroktøren
-  Trekant() {
+  Rektangler() {
   // Opgave 1. Når en ny firkant bliver lavet i hovedprogrammet, bliver denne funktion kaldt og her genereres nogle værdier
   generate();
   }
@@ -16,15 +16,17 @@ class Trekant {
   void generate() {
     this.x = random(400);
     this.y = random(400);
-    this.h = (int)random(400);
-    this.g = (int)random(200);
+    this.w = random(200);
+    this.h = random(200);
+    while(w==h) {
+      this.h = random(200);
+    }
     this.farve = color(random(256),random(256),random(256)); // Finder farven
   }
   
-  // Laver en trekant
-  void drawTrekant() {
+  // Laver en cirkel i stedet for en firkant, men stadig med de samme attributer
+  void drawRektangler() {
     fill(farve);
-    triangle(x,y, x + g / 2, y-h,x + g, y); 
-    
+    rect(x,y, w,h);
   }
 }

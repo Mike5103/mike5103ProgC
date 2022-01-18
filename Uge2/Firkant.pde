@@ -1,6 +1,7 @@
 class Firkant {
   // klassens attributter/ tilstand
   float x, y;
+  float s; // Size
   color farve; // Farve attribut
 
   //konstroktøren
@@ -15,13 +16,14 @@ class Firkant {
   void generate() {
     this.x = random(600);
     this.y = random(400);
-    this.farve = color(random(255),random(255),random(255)); // Finder farven
+    this.s = random(100);
+    this.farve = color(random(256),random(256),random(256)); // Finder farven
   }
   
   // tegn firkant på canvas
   void drawFirkant() {
     fill(farve); // Sætter farven
-    square(x, y, 100);
+    square(x, y, s);
   }
   
     // Laver en cirkel i stedet for en firkant, men stadig med de samme attributer
