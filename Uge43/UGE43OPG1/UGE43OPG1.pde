@@ -24,4 +24,9 @@ void setup() {
   }
 }
 void draw() {
+
+for (int i = 0; i<list.length(); i++) {
+  println("Den " + i+1 + ". highscore er " + list[i]);
+}
+ 
 }
